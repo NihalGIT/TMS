@@ -1,0 +1,34 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>TMS App</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link type="text/css" href="{% static 'tms/css/choix.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <img src="{% static 'tms/img/page2.png' %}" class="bgd">
+        <img src="{% static 'tms/img/8.png' %}" class="ha">
+    </div>
+    <div id="global">
+        <div id="PartieV">
+            <div class="logo">
+                <img src="{% static 'tms/img/10.png' %}">
+            </div>
+        </div>
+        <div id="contenu">
+            <p style="width: 723px;height: 84px;font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 24px;line-height: 42px;">
+                Bienvenue Martin , il est temps d'optimiser  votre trajet.
+            </p>
+            <p style="width: 723px;height: 180px;left: 502px;font-family: 'Poppins';font-style: normal;font-weight: 500;font-size: 16px;line-height: 36px;text-align: justify;">
+                Aider nous à vous proposer le meilleur circuit en choisissant votre méthode de résolution: <br>
+                # Rapide, si vous êtes impatient de prendre la route.<br>
+                # Exacte, si vous voulez prendre votre temps et avoir le trajet le plus optimisé. <br>
+            </p>
+            <input type="button" value="COMMENCER LE ROUTAGE" onclick="window.location.href='Form/'";>
+        </div>
+    </div>
+</body>
+</html>

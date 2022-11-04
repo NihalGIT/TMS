@@ -1,0 +1,135 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+#global {
+    position: absolute;
+    background: #FF5757;
+}
+
+#partieV {
+    width: 639px;
+    height: 657px;
+    left: 0px;
+    top: 0px;
+}
+
+#contenu {
+    margin-left: 639px;
+    height: 657px;
+    background-color: white;
+}
+
+img {
+    position: absolute;
+    left: 750px;
+    top: 170px;
+}
+
+.logo > img {
+    text-align: center;
+    width: 400px;
+    left: 110px;
+    top: -20px;
+}
+
+input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 17px;
+    text-align: center;
+    position: absolute;
+    width: 340px;
+    left: 150px;
+    top: 35.21%;
+    bottom: 57.55%;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+input[type="password"] {
+    position: absolute;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    text-align: center;
+    width: 340px;
+    left: 150px;
+    right: 60.43%;
+    top: 49.69%;
+    bottom: 43.07%;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 100px;
+}
+
+#usr {
+    position: absolute;
+    left: 150px;
+    top: 230px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+#pwd {
+    position: absolute;
+    left: 150px;
+    top: 340px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    position: absolute;
+    left: 150px;
+    width: 340px;
+    top: 69.79%;
+    bottom: 22.97%;
+    background: #4D4C4C;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+label {
+    position: absolute;
+    width: 151px;
+    height: 24px;
+    left: 179px;
+    top: 497px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    left: 150px;
+    top: 500px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}

@@ -1,0 +1,101 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>TMS App</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link type="text/css" href="{% static 'tms/css/form.css' %}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="bg">
+        <img src="{% static 'tms/img/page2.png' %}" class="bgd">
+        <img src="{% static 'tms/img/8.png' %}" class="ha">
+    </div>
+    <div class="box">
+        <div class="container">
+            <form Method="POST" id="formulaire1" action="{% url 'Resultat' %}">
+                {% csrf_token %}
+                <br>
+                <br>
+                <p>Méthodes de résolution</p>
+                <select id="type" name="type">
+                    <option value="quick">Quick Resolution</option>
+                    <option value="exacte">Exact Resolution</option>
+                </select><br>
+                <input type="hidden" id="nbre" name="nbre"><br>
+                <div class="nb" id="nb">
+                    <p>Nombre de destinations</p>
+                    <input type="number" id="dest" name="dest" min="1">
+                    <input type="button" id="btn" value="confirm" onclick="prt2()">
+                </div>
+                <div>
+                    <script>
+                        function prt2() {
+                            oForm = document.getElementById('formulaire1'); //on récupère le noeud formulaire
+                            document.getElementById('nb').style.display = "none";
+                            document.getElementById('dest').disabled = true;
+                            document.getElementById('nbre').value = document.getElementById('dest').value;
+                            const para = document.createElement("p");
+                            para.innerText = "Coordonnées des destinations";
+                            formulaire1.appendChild(para);
+                            for (var i = 0; i < document.getElementById('dest').value; i++) {
+                                var longit = document.createElement('input');
+                                var latit = document.createElement('input');
+                                var nom1 = document.createElement('p');
+                                var nom2 = document.createElement('p');
+                                var j = i + 1;
+                                nom1.innerText = "longitude " + j;
+                                nom2.innerText = "latitude " + j;
+                                nom1.setAttribute('id', 'p1');
+                                nom2.setAttribute('id', 'p2');
+                                longit.setAttribute('name', 'longitude' + i);
+                                longit.setAttribute('type', 'text');
+                                latit.setAttribute('name', 'latitude' + i);
+                                latit.setAttribute('type', 'text');
+                                oForm.appendChild(nom1);
+                                oForm.appendChild(longit);
+                                oForm.appendChild(nom2);
+                                oForm.appendChild(latit);//on place le input dans le formulaire
+                            }
+                            var br = document.createElement('br');
+                            formulaire1.appendChild(br);
+                            const btn = document.createElement("button");
+                            btn.innerHTML = "Je confirme mes choix";
+                            btn.setAttribute('id', 'bton');
+                            btn.setAttribute('type', 'submit');
+                            formulaire1.appendChild(btn);
+                        }
+                    </script>
+                    <input type="hidden" id="longitude" name="longitude" required><br>
+                    <input type="hidden" id="latitude" name="latitude" required><br>
+                </div>
+                <script>
+                    var div = document.getElementById("location");
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                        } else {
+                            div.innerHTML = "The Browser Does not Support Geolocation";
+                        }
+                    }
+                    function showPosition(position) {
+                        var longitude = document.getElementById("longitude");
+                        var latitude = document.getElementById("latitude");
+                        longitude.value = position.coords.longitude;
+                        latitude.value = position.coords.latitude;
+                    }
+                    function showError(error) {
+                        if (error.PERMISSION_DENIED) {
+                            div.innerHTML = "The User have denied the request for Geolocation.";
+                        }
+                    }
+                    getLocation();
+                </script>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

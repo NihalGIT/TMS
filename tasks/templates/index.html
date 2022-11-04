@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TMS App</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link type="text/css" href="{% static 'tms/css/login.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="global">
+        <div id="PartieV">
+            <div class="logo">
+                <img src="{% static 'tms/img/8.png' %}">
+            </div>
+            <form method="post" action="{% url 'Home' %}">
+                {% csrf_token %}
+                <p id="usr">Username</p>
+                <input type="text" name="user" />
+                <p id="pwd">Password</p>
+                <input type="password" name="pwd" />
+                <input type="checkbox" name="choix" /><label for="choix">Keep me logged in</label><br />
+                <input type="submit" value="Log In" />
+            </form>
+        </div>
+        <div id="contenu">
+            <img src="{% static 'tms/img/login.png' %}">
+        </div>
+    </div>
+    
+</body>
+</html>

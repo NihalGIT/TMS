@@ -1,0 +1,7 @@
+asgiref==3.5.2
+certifi==2022.9.24
+Django==4.1.2
+minio==7.1.11
+sqlparse==0.4.3
+tzdata==2022.5
+urllib3==1.26.12
